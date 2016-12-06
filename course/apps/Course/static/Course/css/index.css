@@ -1,0 +1,43 @@
+
+
+#first_form {
+  border: 2px solid black;
+  margin: 0 auto;
+  width:500px;
+  height:30%;
+  margin-bottom: 10px;
+}
+
+#title {
+  vertical-align: top;
+  display: inline-block;
+  float: left;
+}
+
+#title, li{
+  font-size: 18px;
+  list-style: none;
+  margin: 10px;
+}
+
+#value {
+  margin-top: 10px;
+  margin-left: -150px;
+  vertical-align: top;
+  display: inline-block;
+  list-style: none;
+}
+
+label {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+table {
+  text-align: center;
+  margin-top: 10px;
+  border: 2px solid black;
+  margin: 0 auto;
+  width:500px;
+  height:50%;
+}

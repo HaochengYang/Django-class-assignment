@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Destroy</title>
+    <meta name="descrption" content="This page will destroy the user's input">
+    {% load static %}
+    <link rel="stylesheet" type="text/csss" href="{% static 'Course/index.css' %}">
+  </head>
+  <body>
+    <h3>Are you sure you want to destroy this information</h3>
+    {% for deleting in Coursename %}
+    <p>Name: {{deleting.title}}</p>
+    <p>Description:{{deleting.descriptions.decription}}</p>
+    <a href="/">No</a>
+    <a href="/destroy/{{deleting.id}}">Yes! I want to delete this</a>
+    {% endfor %}
+  </body>
+</html>

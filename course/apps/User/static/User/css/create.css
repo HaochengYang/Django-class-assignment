@@ -1,0 +1,32 @@
+#warpper {
+  width: 800px;
+  margin:0 auto;
+}
+
+.registration{
+  vertical-align: top;
+  display: inline-block;
+}
+.registration h1{
+  text-align: center;
+}
+.input ul{
+  padding:0;
+}
+.input {
+  display: inline-block;
+  vertical-align: top;
+}
+.input li{
+  margin-bottom: 10px;
+  list-style:none;
+}
+.title{
+  text-align: right;
+  vertical-align: top;
+  display: inline-block;
+}
+.title li{
+  margin-bottom: 10px;
+  list-style: none;
+}

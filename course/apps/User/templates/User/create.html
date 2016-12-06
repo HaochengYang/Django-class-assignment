@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Login and Log Out</title>
+    <meta name="Description" content="This is the user post">
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'User/css/create.css' %}">
+  </head>
+  <body>
+   <div id="warpper">
+     <div id="error_messages">
+       {% if messages %}
+         {% for message in messages %}
+          <h5>{{message}}</h5>
+          {% endfor %}
+       {% endif %}
+     </div><!--close erroe_messages-->
+    <div class="registration">
+      <h1>Registration</h1>
+     <div class="title">
+      <form action="{% url 'User:register' %}" method="POST">
+      {% csrf_token %}
+      <ul>
+        <li>First name: </li>
+        <li>Last name: </li>
+        <li>Email: </li>
+        <li>Password: </li>
+        <li>Confirm password: </li>
+      </ul>
+    </div> <!--close title div-->
+    <div class="input">
+        <ul>
+          <li><input type="text" name="first_name" placeholder="enter your first name" required></li>
+          <li><input type="text" name="last_name" placeholder="enter your last name" required></li>
+          <li><input type="email" name="email" placeholder="enter your email address" required></li>
+          <li><input type="password" name="password" placeholder="create your password" required></li>
+          <li><input type="password" name="confirm_password" placeholder="confirm your password" required></li>
+          <li><input type="submit" value="create_User"></li>
+        </ul>
+      </form>
+    </div><!--close input-->
+  </div><!--close registration-->
+  <div class="registration">
+   <form action="{% url 'User:login' %}" method="POST">
+    {% csrf_token %}
+    <h1>Login</h1>
+    <div class="title">
+     <ul>
+      <li>Email:</li>
+      <li>Password:</li>
+     </ul>
+   </div><!--close title-->
+     <div class="input">
+     <ul>
+      <li><input type="password" name="password" placeholder="Enter your email" required></li>
+      <li><input type="email" name="email" placeholder="Enter your password" required></li>
+      <li><input type="submit" value="login"></li>
+     </ul>
+   </form>
+    </div><!--close input-->
+   </div><!--close registration-->
+ </div><!--close warpper-->
+  </body>
+</html>

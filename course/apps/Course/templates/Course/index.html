@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Course Project</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Course/css/index.css' %}">
+  </head>
+  <body>
+   <div id="main">
+   <form id="first_form" action="courses" method="POST">
+   {% csrf_token %}
+   <label>Add a new Course</label>
+   <div id="title">
+     <ul>
+      <li>Name:</li>
+      <li>Description:</li>
+   </ul>
+   </div><!--close title-->
+   <div id="value">
+   <ul>
+    <li><input type="text" name="title"></li>
+    <li><textarea type="text" name="decription" rows="10" cols="40"></textarea></li>
+    <li><input type="submit" name="Add"><li>
+   </ul>
+   </div><!--close value-->
+ </form><!--close first_form-->
+ <table>
+   <tr>
+     <th>Course Name</th>
+     <th>Description</th>
+     <th>Data Added</th>
+     <th>Actions</th>
+   </tr>
+   {% for information in Coursenames %}
+   <tr>
+     <td>{{information.title}}</td>
+     <td>{{information.descriptions.decription}}</td>
+     <td>{{information.create_at}}</td>
+     <td><a href="/review/{{information.id}}">Remove</a></td>
+   </tr>
+   {% endfor %}
+ </table>
+ </div><!--close the main here-->
+  </body>
+</html>
