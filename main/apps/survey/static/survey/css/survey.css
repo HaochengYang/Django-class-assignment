@@ -1,0 +1,69 @@
+#survey_box {
+  background-color: lightblue;
+  margin: 0 auto;
+  border: 1px solid black;
+  width: 420px;
+  height: 30%;
+}
+
+#survey_box h2{
+  text-align: center;
+}
+
+#survey_box a{
+  float: right;
+}
+
+#title{
+  margin-top: -5px;
+  font-size: 18px;
+  text-align: right;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#title li{
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+#content{
+  margin-top: -20px;
+  text-align: left;
+  margin-left: -30px;
+  vertical-align: top;
+  display: inline-block;
+}
+#content li{
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+
+#information {
+}
+
+#button {
+  float: right;
+}
+
+#text-message{
+  background-color: lightgreen;
+  margin: 0 auto;
+  border: 1px solid black;
+  width: 420px;
+  height: 8%;
+}
+
+#display_user_title{
+  text-align: center;
+}
+
+#display_user_title li{
+  text-align: left;
+  list-style: none;
+}
+
+#display_user_content li{
+  list-style: none;
+}

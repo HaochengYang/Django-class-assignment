@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>result</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'survey/css/survey.css' %}">
+  </head>
+  <body>
+    <div id="wraper">
+      <div id="text-message">
+        <p>Thanks for submiting this form! You have submitted this form 6 times now</p>
+      </div><!--close text-message-->
+      <div id="survey_box">
+        <div id="display_user_title">
+          <h4>Submmited Information</h4>
+          <ul>
+            <li>Your name:<b>{{name}}</b></li>
+            <li>dojo Location:<b>{{location}}</b></li>
+            <li>Language:<b>{{Language}}</b></li>
+            <li>Comment:<b>{{comment}}</b></li>
+          </ul>
+        </div><!--close display_user_title-->
+        <a href="{% url 'survey' %}">return</a>
+      </div><!--close survey_box-->
+    </div><!--close wraper-->
+  </body>
+</html>

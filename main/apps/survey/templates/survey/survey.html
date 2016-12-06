@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey</title>
+    <meta name="description" content="This is a survey form">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'survey/css/survey.css' %}">
+  </head>
+  <body>
+    <div id="wraper">
+      <div id="survey_box">
+        <h2>Enter Your inforamtion Below<h2>
+        <div id="title">
+          <ul>
+           <li>Your name:</li>
+           <li>dojo Location:</li>
+           <li>Language:</li>
+           <li>Comment:</li>
+         </ul>
+       </div><!--close title-->
+        <div id="content">
+          <form action="{% url 'result' %}" method="POST">
+            {% csrf_token %}
+          <ul>
+            <li><input type="text" name="name" placeholder="please enter your name"><li>
+            <li><select name="location">
+            <option value="seattle">Seattle</option>
+            <option value="Bellevue">Bellevue</option>
+            <option value="Lynnwood">Lynnwood</option>
+            <option value="kent">Kent</option>
+          </select></li>
+          <li><select name="Language">
+            <option value="Java">Java</option>
+            <option value="C#">C#</option>
+            <option value="Python">Python</option>
+            <option value="javascript">javascript</option>
+          </select></li>
+          <li><textarea name="comment" rows="8" cols="40" placeholder="please enter your comment here"></textarea></li>
+          <li id="button"><input type="submit" value="create"></li>
+          </ul>
+        </form>
+        </div><!--close content-->
+      </div><!--close survey_box-->
+    </div><!--close wraper-->
+  </body>
+</html>
