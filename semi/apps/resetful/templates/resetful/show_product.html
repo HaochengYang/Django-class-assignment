@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add product to this page</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'resetful/css/index.css' %}">
+  </head>
+  <body>
+    <div id="warpper">
+    <div id="main">
+      <div class="content">
+        <h3>Product:{{product.id}}</h3>
+         {% if product %}
+          <ul>
+            <li>Name:<ul><li><b>{{product.product_name}}</b></li></ul></li>
+            <li>Description:<ul><li><b>{{product.description}}</b></li></ul></li>
+            <li>Price:<ul><li><b>{{product.price}}</b></li></ul></li>
+          </ul>
+          {% endif %}
+          <ul>
+            <li><a href="{% url 'edit_product' id=product.id %}">Edit</a><li>
+            <li><a href="{% url 'index' %}">Back</a></li>
+          </ul>
+      </div><!--close content-->
+    </div><!--close main-->
+    </div><!--close wrapper-->
+  </body>
+</html>

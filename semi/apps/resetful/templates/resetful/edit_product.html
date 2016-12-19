@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>edit product to this page</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'resetful/css/index.css' %}">
+  </head>
+  <body>
+    <div id="warpper">
+    <div id="main">
+      <div class="content">
+        <h3>Edit product here:</h3>
+        <form class="" action="{% url 'edit_exit_product' product.id %}" method="POST" >
+          {% csrf_token %}
+          {% if product %}
+          <p>Name:<input type="text" name='new_product_name' value={{product.product_name}}></p>
+          <p>Description:<input type="text" name="new_description" value={{product.description}}></p>
+          <p>Price:<input type="text" name="new_price" value={{product.price}}></p>
+          {% endif %}
+          <input type="submit" value="update">
+          <ul>
+          <li><a href="{% url 'show_product' id=product.id %}">Show</a></li>
+          <li><a href="{% url 'index' %}">Return main</a></li>
+          </ul>
+      </div><!--close content-->
+    </div><!--close main-->
+    </div><!--close wrapper-->
+  </body>
+</html>

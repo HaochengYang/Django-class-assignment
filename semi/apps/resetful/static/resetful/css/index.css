@@ -1,0 +1,31 @@
+.content li{
+  display: inline;
+  list-style: none;
+  padding-right: 10px;
+}
+
+.content a{
+  text-decoration: none;
+}
+
+.content table{
+ font-family: arial, sans-serif;
+ border-collapse: collapse;
+}
+
+.contenttd, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.content tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#index_li li{
+  display: inline;
+  list-style: none;
+  border-right: 1px solid black;
+  padding-right: 10px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>This semi-resetful_route_assignment</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'resetful/css/index.css' %}">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="main">
+        <div class="content">
+          <form class="" action="" method="post">
+            <h3>Product</h3>
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+              {% if all_products %}
+                {% for product in all_products %}
+                  <tr>
+                <td>{{product.product_name}}</td>
+                <td>{{product.description}}</td>
+                <td>&#36;{{product.price}}</td>
+                <td><ul>
+                  <li><a href="{% url 'show_product' id=product.id %}">Show</a></li>
+                  <li><a href="{% url 'edit_product' id=product.id %}">Edit</a></li>
+                  <li><a href="{% url 'remove_product' id=product.id %}">Remove</a></li>
+                </ul></td>
+                  </tr>
+                {% endfor %}
+                {% endif %}
+            </table>
+            <ul id="index_li">
+              <li><a href="{% url 'add_product' %}">Add a new product</a></li>
+              <li><a href="{% url 'delete' %}">clear all</a></li>
+            <ul>
+          </form>
+        </div><!--close content-->
+      </div><!--close main-->
+    </div><!--close wrapper-->
+  </body>
+</html>
